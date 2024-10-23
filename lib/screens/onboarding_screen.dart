@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:store_app/auth/login.dart';
-import 'package:store_app/screens/home_page.dart';
+
+import 'package:store_app/screens/Verified _Email.dart';
+
+import '../auth/login.dart';
 
 class OnBoard extends StatefulWidget {
   static const String id = 'onboard_screen';
@@ -52,7 +54,7 @@ class _OnBoardState extends State<OnBoard> {
                   Padding(
                     padding: const EdgeInsets.only(left: 60),
                     child: Image.asset(
-                      "lib/assets/130804-ORS4U4-585-removebg-preview.png",
+                      "assets/images/69267-OCNOEK-403-removebg-preview.png",
                       width: 400.0,
                       height: 400.0,
                     ),
@@ -120,7 +122,7 @@ class _OnBoardState extends State<OnBoard> {
               Padding(
                 padding: const EdgeInsets.only(left: 0),
                 child: Image.asset(
-                  "lib/assets/130804-ORS4U4-585-removebg-preview.png",
+                  "assets/images/10957653-removebg-preview.png",
                   width: 400.0,
                   height: 400.0,
                 ),
@@ -185,7 +187,7 @@ class _OnBoardState extends State<OnBoard> {
                   height: 40,
                 ),
                 Image.asset(
-                  "lib/assets/130804-ORS4U4-585-removebg-preview.png",
+                  "assets/images/3405339-removebg-preview.png",
                   width: 400.0,
                   height: 400.0,
                 ),
@@ -218,8 +220,8 @@ class _OnBoardState extends State<OnBoard> {
                   onTap: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                      return Login();
-                    }));
+                          return Login();
+                        }));
                   },
                   child: Container(
                     height: 56,

@@ -7,8 +7,8 @@ import 'package:store_app/components/custombuttonauth.dart';
 import 'package:store_app/components/customlogoauth.dart';
 import 'package:store_app/components/textformfield.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:store_app/pages/experiment.dart';
-import 'package:store_app/screens/home_page.dart';
+
+import 'package:store_app/screens/Verified _Email.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -43,7 +43,7 @@ class _LoginState extends State<Login> {
 
     // Once signed in, return the UserCredential
     await FirebaseAuth.instance.signInWithCredential(credential);
-    Navigator.of(context).pushNamedAndRemoveUntil("homeage", (route) => false);
+    Navigator.of(context).pushNamedAndRemoveUntil("homepage", (route) => false);
   }
 
   @override
@@ -160,7 +160,7 @@ class _LoginState extends State<Login> {
                     } else if (credential.user!.emailVerified &&
                         credential.user!.email != "nr1413@fayoum.edu.eg") {
                       ///////////////////
-                      Navigator.of(context).pushReplacementNamed("experiment");
+                      Navigator.of(context).pushReplacementNamed("HomeScreen");
                     } else {
                       FirebaseAuth.instance.currentUser!
                           .sendEmailVerification();
@@ -215,7 +215,7 @@ class _LoginState extends State<Login> {
                 children: [
                   const Text("Login With Google  "),
                   Image.asset(
-                    "lib/assets/logo.png",
+                    "assets/images/logo.png",
                     width: 20,
                   )
                 ],

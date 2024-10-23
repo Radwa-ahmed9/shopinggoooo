@@ -12,7 +12,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(seconds: 2), () {
+    Future.delayed(Duration(seconds: 5), () {
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
         return OnBoard();
       }));
@@ -29,7 +29,7 @@ class _SplashScreenState extends State<SplashScreen> {
           children: [
             Center(
               child: Image.asset(
-                'lib/assets/130804-ORS4U4-585-removebg-preview.png',
+                'assets/images/130804-ORS4U4-585-removebg-preview.png',
                 width: 700.0,
                 height: 700.0,
               ),

@@ -3,12 +3,20 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:store_app/auth/login.dart';
 import 'package:store_app/auth/signup.dart';
-import 'package:store_app/pages/experiment.dart';
-import 'package:store_app/screens/home_page.dart';
+import 'package:store_app/screens/cart_screen.dart';
+import 'package:store_app/screens/category_app.dart';
+import 'package:store_app/screens/Verified _Email.dart';
+import 'package:store_app/screens/homeees.dart';
+import 'package:store_app/screens/onboarding_screen.dart';
+import 'package:store_app/screens/product_detailed_screen.dart';
 import 'package:store_app/screens/splash_screen.dart';
 import 'package:store_app/screens/update_product_page.dart';
+
+import 'cart_provider.dart';
+import 'models/product_model.dart';
 
 // لا تحتاج لاستيراد CategoryProductsPage هنا
 
@@ -46,7 +54,9 @@ class _MyAppState extends State<StoreApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return ChangeNotifierProvider(
+        create: (context) => CartProvider(),
+    child:  MaterialApp(
       debugShowCheckedModeBanner: false,
       home: (FirebaseAuth.instance.currentUser != null &&
               FirebaseAuth.instance.currentUser!.emailVerified)
@@ -55,17 +65,20 @@ class _MyAppState extends State<StoreApp> {
       routes: {
         "signup": (context) => SignUp(),
         "login": (context) => Login(),
-        "homepage": (context) => HomePage(),
+        "HomeScreen": (context) => HomeScreen(),
+        "HomeApp": (context)=> HomeApp(),
+        "HomePage": (context) => HomePage(),
+        "onboard_screen": (context) => OnBoard(),
+        ProductDetailsPage.id: (context) => ProductDetailsPage(
+          product:
+          ModalRoute.of(context)!.settings.arguments as ProductModel,
+        ),
         UpdateProductPage.id: (context) => UpdateProductPage(),
-        "experiment": (context) => Experiment(),
+        CartScreen.id: (context) => CartScreen(),
+
       },
-      /*
-      routes: {
-        HomePage.id: (context) => HomePage(),
-        UpdateProductPage.id: (context) => UpdateProductPage(),
-        // إزالة CategoryProductsPage.id من هنا
-      },
-      initialRoute: HomePage.id,*/
+
+    ),
     );
   }
 }

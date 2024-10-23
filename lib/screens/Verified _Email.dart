@@ -1,4 +1,4 @@
-// lib/screens/home_page.dart
+// lib/screens/Verified _Email.dart
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';

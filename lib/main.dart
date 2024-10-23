@@ -10,6 +10,7 @@ import 'package:store_app/screens/cart_screen.dart';
 import 'package:store_app/screens/category_app.dart';
 import 'package:store_app/screens/Verified _Email.dart';
 import 'package:store_app/screens/homeees.dart';
+
 import 'package:store_app/screens/onboarding_screen.dart';
 import 'package:store_app/screens/product_detailed_screen.dart';
 import 'package:store_app/screens/splash_screen.dart';

@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:store_app/auth/login.dart';
 import 'package:store_app/auth/signup.dart';
+import 'package:store_app/screens/admin_page.dart';
 import 'package:store_app/screens/cart_screen.dart';
 import 'package:store_app/screens/category_app.dart';
 import 'package:store_app/screens/Verified _Email.dart';
@@ -68,7 +69,7 @@ class _MyAppState extends State<StoreApp> {
         "login": (context) => Login(),
         "HomeScreen": (context) => HomeScreen(),
         "HomeApp": (context)=> HomeApp(),
-        "HomePage": (context) => HomePage(),
+        "AdminPage": (context) => AdminPage(),
         "onboard_screen": (context) => OnBoard(),
         ProductDetailsPage.id: (context) => ProductDetailsPage(
           product:

@@ -156,7 +156,7 @@ class _LoginState extends State<Login> {
                     if (credential.user!.emailVerified &&
                         credential.user!.email == "nr1413@fayoum.edu.eg") {
                       ///////////////////
-                      Navigator.of(context).pushReplacementNamed("homepage");
+                      Navigator.of(context).pushReplacementNamed("AdminPage");
                     } else if (credential.user!.emailVerified &&
                         credential.user!.email != "nr1413@fayoum.edu.eg") {
                       ///////////////////
